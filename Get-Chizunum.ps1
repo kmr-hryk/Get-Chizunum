@@ -7,13 +7,13 @@ $Filename = $(Get-ChildItem $Filename).FullName
 
 $Chisekiatr = Get-Content $Filename | ForEach-Object {
    if ($_ -match "^[0-9]") {
-      Write-Output "`r`n$_"
+      Write-Output "`n$_"
    } else {
       Write-Output ",$_"
    }
 }
 
-$Chisekiatr = $Chisekiatr -join "" -Split "`r`n"
+$Chisekiatr = $Chisekiatr -join "" -Split "`n"
 
 Write-Output $Chisekiatr | ForEach-Object {
    $tmp = $_.Split(",")
@@ -33,4 +33,5 @@ Write-Output $Chisekiatr | ForEach-Object {
    }
 }
 
-Write-Output $Chizuatr | Out-File $Filename.Replace(".atr",".csv")
+Write-Output $Chizuatr | Out-File $Filename.Replace(".atr",".csv") -Encoding default
+#Add-Content -Path $Filename.Replace(".atr",".csv") -Value $Chizuatr -Encoding string
