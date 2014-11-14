@@ -5,4 +5,4 @@ $Chisekiatr = Get-Content $Filename | ForEach-Object { if ($_ -match "^[0-9]") {
 
 $Chisekiatr = $Chisekiatr -join ""
 
-Write-Output $Chisekiatr
+Write-Output $Chisekiatr[2]
