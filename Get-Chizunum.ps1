@@ -34,4 +34,3 @@ Write-Output $Chisekiatr | ForEach-Object {
 }
 
 Write-Output $Chizuatr | Out-File $Filename.Replace(".atr",".csv") -Encoding default
-#Add-Content -Path $Filename.Replace(".atr",".csv") -Value $Chizuatr -Encoding string
