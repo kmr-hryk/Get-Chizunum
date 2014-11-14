@@ -1,6 +1,7 @@
 [reflection.assembly]::LoadWithPartialName("Microsoft.VisualBasic") > $null
 $vbnarrow = [Microsoft.VisualBasic.VbStrConv]::Narrow
 $Filename = $ARGS[0]
+$Chizuatr
 
 $Filename = $(Get-ChildItem $Filename).FullName
 
@@ -27,8 +28,8 @@ Write-Output $Chisekiatr | ForEach-Object {
          $Chizunum += $mae + $soe + " " + $ban
       }
    }
-   $Chizunum = $Chizunum -join ","
-   Write-Output $Chizunum
+   $Chizuatr += $Chizunum -join ","
 }
 
+Write-Output $Chizuatr
 #| Out-File $Filename.Replace(".atr",".csv")
